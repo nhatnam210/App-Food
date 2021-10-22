@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/margin_1"
+    app:cardCornerRadius="@dimen/radius"
+    android:layout_width="@dimen/item_card_size"
+    android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_card_size">
+
+            <ImageView
+                android:id="@+id/hinhdanhmuc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher" />
+            <TextView
+                android:id="@+id/tendanhmuc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/background_text_size"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/background_text_color"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="Ten Danh Muc"
+                android:textColor="@color/fourth"
+                android:textStyle="bold" />
+        </RelativeLayout>
+</androidx.cardview.widget.CardView>

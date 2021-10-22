@@ -13,4 +13,5 @@
     <color name="third">#C6E377</color>
     <color name="fourth">#FBFAD3</color>
     <color name="fifth">#FFFFE6</color>
+    <color name="background_text_color">#4d000000</color>
 </resources>
