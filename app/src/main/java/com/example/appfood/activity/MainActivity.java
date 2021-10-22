@@ -17,6 +17,8 @@ import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
+import com.example.appfood.adapter.DanhMucAdapter;
+import com.example.lib.model.DanhMuc;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ListView listViewNavHome;
     DrawerLayout drawerLayout;
+    ArrayList<DanhMuc> danhMucs;
+    DanhMucAdapter danhMucAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,5 +86,9 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView);
         listViewNavHome = findViewById(R.id.listViewNavHome);
         drawerLayout = findViewById(R.id.drawerLayout);
+        //custom view danh muc
+        danhMucs = new ArrayList<>();
+        danhMucAdapter = new DanhMucAdapter(danhMucs,getApplicationContext());
+        //...
     }
 }

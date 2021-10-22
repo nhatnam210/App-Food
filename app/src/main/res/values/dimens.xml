@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="margin_1_2">5dp</dimen>
     <dimen name="margin_1">10dp</dimen>
     <dimen name="margin_2">15dp</dimen>
+    <dimen name="radius">16dp</dimen>
+    <dimen name="item_card_size">160dp</dimen>
+    <dimen name="text_size_title">30dp</dimen>
     <dimen name="text_size_1">16dp</dimen>
+    <dimen name="background_text_size">35dp</dimen>
 </resources>
