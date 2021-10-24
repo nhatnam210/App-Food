@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    distance -->
     <dimen name="margin_1_2">5dp</dimen>
     <dimen name="margin_1">10dp</dimen>
     <dimen name="margin_2">15dp</dimen>
-    <dimen name="radius">16dp</dimen>
+    <dimen name="padding_1">5dp</dimen>
+    <dimen name="padding_2">10dp</dimen>
+    <dimen name="padding_text">3dp</dimen>
+    <dimen name="radius">8dp</dimen>
+    <!--    item -->
     <dimen name="item_card_size">160dp</dimen>
-    <dimen name="text_size_title">30dp</dimen>
-    <dimen name="text_size_1">16dp</dimen>
-    <dimen name="background_text_size">35dp</dimen>
+    <dimen name="item_card_height">120dp</dimen>
+    <!--    text -->
+    <dimen name="text_size_big">30dp</dimen>
+    <dimen name="text_size_title">16dp</dimen>
+    <dimen name="text_size">15dp</dimen>
+    <dimen name="text_cost_size">14dp</dimen>
+    <dimen name="text_des_size">12dp</dimen>
+    <dimen name="text_size_on_pic">16dp</dimen>
+    <!--    background -->
+    <dimen name="background_text_height_on_pic">35dp</dimen>
+    <dimen name="background_text_height">30dp</dimen>
+    <dimen name="background_des_height">30dp</dimen>
 </resources>

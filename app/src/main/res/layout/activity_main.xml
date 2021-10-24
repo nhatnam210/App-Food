@@ -27,22 +27,34 @@
             </androidx.appcompat.widget.Toolbar>
             <TextView
                 android:text="@string/app_name"
-                android:layout_marginBottom="@dimen/margin_1"
                 android:fontFamily="@font/dancing_script_medium"
                 android:gravity="center"
+                android:layout_marginTop="@dimen/margin_1_2"
+                android:layout_marginBottom="@dimen/margin_1_2"
+                android:paddingBottom="@dimen/margin_1_2"
+                android:background="@color/third"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_title"
+                android:textSize="@dimen/text_size_big"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <ViewFlipper
-                android:id="@+id/viewFlipper"
-                android:background="@color/white"
+            <androidx.cardview.widget.CardView
+                android:elevation="@dimen/margin_1"
+                app:cardCornerRadius="@dimen/radius"
+                android:layout_marginTop="@dimen/margin_1_2"
                 android:layout_marginLeft="@dimen/margin_1"
                 android:layout_marginRight="@dimen/margin_1"
                 android:layout_width="match_parent"
-                android:layout_height="130dp">
-            </ViewFlipper>
+                android:layout_height="wrap_content">
+                <ViewFlipper
+                    android:id="@+id/viewFlipper"
+
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp">
+                </ViewFlipper>
+            </androidx.cardview.widget.CardView>
+
             <LinearLayout
                 android:background="@color/fifth"
                 android:orientation="vertical"
@@ -50,18 +62,20 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:gravity="center"
                     android:text="Món ngon mỗi ngày"
+                    android:gravity="center"
                     android:textColor="@color/second"
-                    android:textSize="@dimen/text_size_1"
+                    android:textSize="@dimen/text_size_title"
                     android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_1" />
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycleView"
+                    android:layout_marginStart="@dimen/margin_1"
+                    android:layout_marginEnd="@dimen/margin_1"
                     android:layout_marginTop="@dimen/margin_1"
-                    android:layout_marginStart="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleViewMonNgauNhien"
+                    android:layout_margin="@dimen/margin_1_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                 </androidx.recyclerview.widget.RecyclerView>
@@ -79,7 +93,6 @@
                 android:id="@+id/listViewNavHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
             </ListView>
         </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>

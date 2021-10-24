@@ -1,40 +1,31 @@
 package com.example.lib.model;
 
 public class DanhMuc {
-    public int Id;
-    public String Tendanhmuc;
-    public String Hinhanhdanhmuc;
-
-    public DanhMuc() {
-    }
-
-    public DanhMuc(int id, String tendanhmuc, String hinhanhdanhmuc) {
-        Id = id;
-        Tendanhmuc = tendanhmuc;
-        Hinhanhdanhmuc = hinhanhdanhmuc;
-    }
+    int id;
+    String tendanhmuc;
+    String hinhdanhmuc;
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTendanhmuc() {
-        return Tendanhmuc;
+        return tendanhmuc;
     }
 
     public void setTendanhmuc(String tendanhmuc) {
-        Tendanhmuc = tendanhmuc;
+        this.tendanhmuc = tendanhmuc;
     }
 
-    public String getHinhanhdanhmuc() {
-        return Hinhanhdanhmuc;
+    public String getHinhdanhmuc() {
+        return hinhdanhmuc;
     }
 
-    public void setHinhanhdanhmuc(String hinhanhdanhmuc) {
-        Hinhanhdanhmuc = hinhanhdanhmuc;
+    public void setHinhdanhmuc(String hinhdanhmuc) {
+        this.hinhdanhmuc = hinhdanhmuc;
     }
 }
