@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             GetMonNgauNhien();
         }else{
             Show.Notify(this,"Không có Internet! Vui lòng thử lại!");
-//            finish();
+            finish();
         }
     }
 
