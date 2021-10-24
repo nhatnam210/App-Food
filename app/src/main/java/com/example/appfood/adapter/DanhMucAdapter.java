@@ -1,71 +1,63 @@
 package com.example.appfood.adapter;
 
-import static retrofit2.Response.error;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
 import com.example.lib.model.DanhMuc;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class DanhMucAdapter extends BaseAdapter {
-    ArrayList<DanhMuc> arrayListDanhMuc;
+public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewDanhMuc> {
     Context context;
+    List<DanhMuc> list;
 
-    public DanhMucAdapter(ArrayList<DanhMuc> arrayListDanhMuc, Context context) {
-        this.arrayListDanhMuc = arrayListDanhMuc;
+    public DanhMucAdapter(Context context, List<DanhMuc> list) {
         this.context = context;
+        this.list = list;
+    }
+
+    //get form view
+    @NonNull
+    @Override
+    public GetViewDanhMuc onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_danh_muc, parent, false);
+        GetViewDanhMuc getViewDanhMuc = new GetViewDanhMuc(v);
+        return getViewDanhMuc;
+    }
+
+    //gán giá trị cho tương ứng cho từng id view theo position
+    @Override
+    public void onBindViewHolder(@NonNull GetViewDanhMuc holder, int position) {
+        DanhMuc danhMuc = list.get(position);
+        holder.tendanhmuc.setText(danhMuc.getTendanhmuc());
+        Glide.with(context).load(danhMuc.getHinhdanhmuc())
+                .placeholder(R.drawable.img_default)
+                .error(R.drawable.img_error)
+                .into(holder.hinhdanhmuc);
     }
 
     @Override
-    public int getCount() {
-        return arrayListDanhMuc.size();
+    public int getItemCount() {
+        return list.size();
     }
 
-    @Override
-    public Object getItem(int i) {
-        return arrayListDanhMuc.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    public class GetCustomView {
-        ImageView hinhdanhmuc;
+    //get id view
+    public class GetViewDanhMuc extends RecyclerView.ViewHolder {
         TextView tendanhmuc;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        GetCustomView getCustomView = null;
-        //nếu chưa có giá trị id thì gán
-        if(view == null) {
-            getCustomView = new GetCustomView();
-            //get layout
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.item_grid_danh_muc,null);
-            getCustomView.hinhdanhmuc = (ImageView) view.findViewById(R.id.hinhdanhmuc);
-            getCustomView.tendanhmuc = (TextView) view.findViewById(R.id.tendanhmuc);
-            //gán các thuộc tính vào getView
-            view.setTag(getCustomView);
-        }else{
-            getCustomView = (GetCustomView) view.getTag();
-            getCustomView.tendanhmuc.setText(arrayListDanhMuc.get(i).getTendanhmuc());
-            Glide.with(context).load(arrayListDanhMuc.get(i).getHinhanhdanhmuc())
-                    .placeholder(R.drawable.img_default)
-                    .error(R.drawable.img_fail)
-                    .into(getCustomView.hinhdanhmuc);
+        ImageView hinhdanhmuc;
+        public GetViewDanhMuc(@NonNull View itemView) {
+            super(itemView);
+            tendanhmuc = itemView.findViewById(R.id.tendanhmuc);
+            hinhdanhmuc = itemView.findViewById(R.id.hinhdanhmuc);
         }
-        return view;
     }
 }
