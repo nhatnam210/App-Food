@@ -51,7 +51,7 @@ public class DanhMucActivity extends AppCompatActivity {
             GetDanhMuc();
         }else{
             Show.Notify(this,"Không có kết nối Internet!");
-//            finish();
+            finish();
         }
     }
 
