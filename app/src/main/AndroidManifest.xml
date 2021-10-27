@@ -14,18 +14,27 @@
         android:theme="@style/Theme.AppFood"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.DanhMucActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.ChiTietDanhMucActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LienHeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ThongTinNhaHangActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.DanhMucActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

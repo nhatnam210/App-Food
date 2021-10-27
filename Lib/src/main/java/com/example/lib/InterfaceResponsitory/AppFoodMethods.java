@@ -1,15 +1,25 @@
 package com.example.lib.InterfaceResponsitory;
 
-import com.example.lib.model.DanhMucModel;
-import com.example.lib.model.MonModel;
+import com.example.lib.model.DanhMuc;
+import com.example.lib.model.Mon;
 
 import io.reactivex.rxjava3.core.Observable;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface AppFoodMethods {
     @GET("danhmuc.php")
-    Observable<DanhMucModel> GET_DanhMuc();
+    Observable<DanhMuc> GET_DanhMuc();
 
     @GET("monngaunhien.php")
-    Observable<MonModel> GET_MonNgauNhien();
+    Observable<Mon> GET_MonNgauNhien();
+
+    @POST("chitietdanhmuc.php")
+    @FormUrlEncoded
+    Observable<Mon> GET_MonTheoDanhMuc(
+            @Field("page") int page,
+            @Field("madanhmuc") int madanhmuc
+    );
 }
