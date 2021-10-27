@@ -59,9 +59,16 @@ public class DanhMucActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(trangchu);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GetDanhMuc();
     }
 
     private void khoitao() {

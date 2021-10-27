@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.appfood.R;
 
-public class ThongTinNhaHangActivity extends AppCompatActivity {
+public class GioiThieuChungActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thong_tin_nha_hang);
+        setContentView(R.layout.activity_gioi_thieu_chung);
     }
 }
