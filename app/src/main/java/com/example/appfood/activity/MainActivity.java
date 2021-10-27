@@ -74,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GetMonNgauNhien();
+    }
+
     private void setNav() {
         //list tùy chọn nav
         navAdapter = new NavAdapter(MainActivity.this,R.layout.item_list_nav);
@@ -109,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(danhmuc);
                         break;
                     case 1:
-                        Intent thongtin = new Intent(getApplicationContext(),ThongTinNhaHangActivity.class);
+                        Intent thongtin = new Intent(getApplicationContext(), GioiThieuChungActivity.class);
                         startActivity(thongtin);
                         break;
                     case 2:

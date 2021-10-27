@@ -14,6 +14,7 @@
         android:theme="@style/Theme.AppFood"
         android:usesCleartextTraffic="true">
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.ChiTietDanhMucActivity"
             android:exported="true">
             <intent-filter>
@@ -23,15 +24,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.LienHeActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.ThongTinNhaHangActivity"
+            android:screenOrientation="portrait"
+            android:name=".activity.GioiThieuChungActivity"
             android:exported="true" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.DanhMucActivity"
             android:exported="true"></activity>
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.MainActivity"
             android:exported="true">
 
