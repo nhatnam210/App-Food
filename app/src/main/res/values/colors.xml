@@ -14,6 +14,7 @@
     <color name="fourth">#FBFAD3</color>
     <color name="fifth">#FFFFE6</color>
     <color name="background_text_color">#4d000000</color>
+    <color name="cost_color">#ff3333</color>
     <color name="background_cost_color">#b3ff1a1a</color>
     <color name="transparent">#00FFFFFF</color>
 </resources>

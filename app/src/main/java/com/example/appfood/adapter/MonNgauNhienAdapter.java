@@ -1,5 +1,6 @@
 package com.example.appfood.adapter;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +18,12 @@ import com.example.lib.model.Mon;
 import java.text.DecimalFormat;
 import java.util.List;
 
+
 public class MonNgauNhienAdapter extends RecyclerView.Adapter<MonNgauNhienAdapter.GetViewMonNgauNhien> {
     Context context;
-    List<Mon> list;
+    List<Mon.Result> list;
 
-    public MonNgauNhienAdapter(Context context, List<Mon> list) {
+    public MonNgauNhienAdapter(Context context, List<Mon.Result> list) {
         this.context = context;
         this.list = list;
     }
@@ -29,19 +31,19 @@ public class MonNgauNhienAdapter extends RecyclerView.Adapter<MonNgauNhienAdapte
     @NonNull
     @Override
     public GetViewMonNgauNhien onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_mon_ngau_nhien,parent,false);
+        View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_mon_ngau_nhien,parent,false);
         GetViewMonNgauNhien getViewMonNgauNhien = new GetViewMonNgauNhien(view);
         return getViewMonNgauNhien;
     }
 
     @Override
     public void onBindViewHolder(@NonNull GetViewMonNgauNhien holder, int position) {
-        Mon mon = list.get(position);
+        Mon.Result monResult = list.get(position);
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        holder.gia.setText(decimalFormat.format(Double.parseDouble(mon.getGia()))+" đ");
-        holder.tenmon.setText(mon.getTenmon());
-        holder.mota.setText(mon.getMota());
-        Glide.with(context).load(mon.getHinhmon())
+        holder.gia.setText(decimalFormat.format(Double.parseDouble(monResult.getGia()))+" đ");
+        holder.tenmon.setText(monResult.getTenmon());
+        holder.mota.setText(monResult.getMota());
+        Glide.with(context).load(monResult.getHinhmon())
                 .placeholder(R.drawable.img_default)
                 .error(R.drawable.img_error)
                 .into(holder.hinhmon);
@@ -52,7 +54,7 @@ public class MonNgauNhienAdapter extends RecyclerView.Adapter<MonNgauNhienAdapte
         return list.size();
     }
 
-    public class GetViewMonNgauNhien extends  RecyclerView.ViewHolder{
+    public class GetViewMonNgauNhien extends  RecyclerView.ViewHolder {
         TextView gia,tenmon,mota;
         ImageView hinhmon;
         public GetViewMonNgauNhien(@NonNull View itemView) {

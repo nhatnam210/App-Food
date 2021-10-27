@@ -7,10 +7,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
@@ -18,6 +20,8 @@ import android.widget.ViewFlipper;
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
 import com.example.appfood.adapter.MonNgauNhienAdapter;
+import com.example.appfood.adapter.NavAdapter;
+import com.example.lib.NavForm;
 import com.example.lib.common.NetworkConnection;
 import com.example.lib.common.Show;
 import com.example.lib.InterfaceResponsitory.AppFoodMethods;
@@ -41,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ListView listViewNavHome;
     DrawerLayout drawerLayout;
+    NavAdapter navAdapter;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     AppFoodMethods appFoodMethods;
 
-    List<Mon> listMonNgauNhien;
+    List<Mon.Result> listMonNgauNhienResult;
     MonNgauNhienAdapter monNgauNhienAdapter;
 
     @Override
@@ -54,24 +59,66 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getViewId();
-        Toolbar();
+        actionToolbar();
+        khoitao();
+        setNav();
 
-        listMonNgauNhien = new ArrayList<>();
+        //check network
+        if(NetworkConnection.isConnected(this)) {
+            Slider();
+            GetMonNgauNhien();
+            ChuyenTrang();
+        }else{
+            Show.Notify(this,"Không có Internet! Vui lòng thử lại!");
+            finish();
+        }
+    }
+
+    private void setNav() {
+        //list tùy chọn nav
+        navAdapter = new NavAdapter(MainActivity.this,R.layout.item_list_nav);
+        listViewNavHome.setAdapter(navAdapter);
+
+        navAdapter.add(new NavForm(R.drawable.ic_menu_res,getString(R.string.menu)));
+        navAdapter.add(new NavForm(R.drawable.ic_info,getString(R.string.introduce)));
+        navAdapter.add(new NavForm(R.drawable.ic_contact,getString(R.string.contact)));
+    }
+
+    private void khoitao() {
+        listMonNgauNhienResult = new ArrayList<>();
+        appFoodMethods = RetrofitClient.getRetrofit(Url.AppFood_Url).create(AppFoodMethods.class);
 
         //set layout 2 cột
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
         recycleViewMonNgauNhien.setLayoutManager(layoutManager);
         recycleViewMonNgauNhien.setHasFixedSize(true);
+    }
 
-        appFoodMethods = RetrofitClient.getRetrofit(Url.AppFood_Url).create(AppFoodMethods.class);
+    public void ToHome(View view) {
+        Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(trangchu);
+    }
 
-        if(NetworkConnection.isConnected(this)) {
-            Slider();
-            GetMonNgauNhien();
-        }else{
-            Show.Notify(this,"Không có Internet! Vui lòng thử lại!");
-            finish();
-        }
+    private void ChuyenTrang() {
+        listViewNavHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        Intent danhmuc = new Intent(getApplicationContext(),DanhMucActivity.class);
+                        startActivity(danhmuc);
+                        break;
+                    case 1:
+                        Intent thongtin = new Intent(getApplicationContext(),ThongTinNhaHangActivity.class);
+                        startActivity(thongtin);
+                        break;
+                    case 2:
+                        Intent lienhe = new Intent(getApplicationContext(),LienHeActivity.class);
+                        startActivity(lienhe);
+                        break;
+                }
+            }
+        });
     }
 
     private void GetMonNgauNhien() {
@@ -79,10 +126,10 @@ public class MainActivity extends AppCompatActivity {
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(
-                monModel -> {
-                    if(monModel.isSuccess()) {
-                        listMonNgauNhien = monModel.getResult();
-                        monNgauNhienAdapter = new MonNgauNhienAdapter(this,listMonNgauNhien);
+                mon -> {
+                    if(mon.isSuccess()) {
+                        listMonNgauNhienResult = mon.getResult();
+                        monNgauNhienAdapter = new MonNgauNhienAdapter(this,listMonNgauNhienResult);
                         recycleViewMonNgauNhien.setAdapter(monNgauNhienAdapter);
                     }
                 },
@@ -115,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         viewFlipper.setOutAnimation(animation_slide_step_2);
     }
 
-    private void Toolbar() {
+    private void actionToolbar() {
         setSupportActionBar(toolbarHome);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -139,4 +186,5 @@ public class MainActivity extends AppCompatActivity {
 //        danhMucAdapter = new DanhMucAdapter(danhMucs,getApplicationContext());
         //...
     }
+
 }

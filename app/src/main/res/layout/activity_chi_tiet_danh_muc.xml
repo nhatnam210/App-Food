@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/fifth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChiTietDanhMucActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:title="chi tiet danh muc"
+        app:navigationIcon="@drawable/ic_back_button"
+        app:titleTextColor="@color/white"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </androidx.appcompat.widget.Toolbar>
+    <FrameLayout
+        android:layout_marginTop="@dimen/margin_1_2"
+        android:layout_marginBottom="@dimen/margin_1_2"
+        android:background="@color/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:onClick="ToHome"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/logo_app"
+                android:layout_marginRight="@dimen/margin_1_2"
+                android:layout_width="@dimen/item_logo_top_size"
+                android:layout_height="@dimen/item_logo_top_size"/>
+            <TextView
+                android:layout_width="@dimen/app_name_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="@dimen/padding_text"
+                android:fontFamily="@font/dancing_script_medium"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewChiTietDanhMuc"
+        android:layout_margin="@dimen/margin_1_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

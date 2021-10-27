@@ -7,19 +7,33 @@
     <dimen name="padding_1">5dp</dimen>
     <dimen name="padding_2">10dp</dimen>
     <dimen name="padding_text">3dp</dimen>
+    <dimen name="padding_text_left">2dp</dimen>
+    <dimen name="app_name_width">90dp</dimen>
+
+
     <dimen name="radius">8dp</dimen>
     <!--    item -->
-    <dimen name="item_card_size">160dp</dimen>
-    <dimen name="item_card_height">120dp</dimen>
+    <dimen name="item_card_menu_height">140dp</dimen>
+    <dimen name="item_card_home_height">120dp</dimen>
+    <dimen name="item_logo_top_size">30dp</dimen>
+    <dimen name="item_logo_nav_size">90dp</dimen>
+    <dimen name="item_detail_menu_pic_width">80dp</dimen>
+    <dimen name="item_detail_menu_pic_height">60dp</dimen>
+
     <!--    text -->
-    <dimen name="text_size_big">30dp</dimen>
+    <dimen name="text_size_nav">30dp</dimen>
+    <dimen name="text_size_big">26dp</dimen>
     <dimen name="text_size_title">16dp</dimen>
     <dimen name="text_size">15dp</dimen>
     <dimen name="text_cost_size">14dp</dimen>
     <dimen name="text_des_size">12dp</dimen>
+    <dimen name="text_des_detail_size">10dp</dimen>
     <dimen name="text_size_on_pic">16dp</dimen>
+
+
     <!--    background -->
     <dimen name="background_text_height_on_pic">35dp</dimen>
     <dimen name="background_text_height">30dp</dimen>
     <dimen name="background_des_height">30dp</dimen>
+    <dimen name="background_des_detail_height">26dp</dimen>
 </resources>

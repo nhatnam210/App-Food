@@ -25,42 +25,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
             </androidx.appcompat.widget.Toolbar>
-            <TextView
-                android:text="@string/app_name"
-                android:fontFamily="@font/dancing_script_medium"
-                android:gravity="center"
+            <FrameLayout
                 android:layout_marginTop="@dimen/margin_1_2"
                 android:layout_marginBottom="@dimen/margin_1_2"
-                android:paddingBottom="@dimen/margin_1_2"
                 android:background="@color/third"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_big"
-                android:textStyle="bold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:onClick="ToHome"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:src="@drawable/logo_app"
+                        android:layout_marginRight="@dimen/margin_1_2"
+                        android:layout_width="@dimen/item_logo_top_size"
+                        android:layout_height="@dimen/item_logo_top_size"/>
+                    <TextView
+                        android:layout_width="@dimen/app_name_width"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/padding_text"
+                        android:paddingRight="@dimen/padding_1"
+                        android:fontFamily="@font/dancing_script_medium"
+                        android:text="@string/app_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_big"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
             <androidx.cardview.widget.CardView
                 android:elevation="@dimen/margin_1"
                 app:cardCornerRadius="@dimen/radius"
                 android:layout_marginTop="@dimen/margin_1_2"
+                android:layout_marginBottom="@dimen/margin_1_2"
                 android:layout_marginLeft="@dimen/margin_1"
                 android:layout_marginRight="@dimen/margin_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ViewFlipper
                     android:id="@+id/viewFlipper"
-
                     android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="130dp">
                 </ViewFlipper>
             </androidx.cardview.widget.CardView>
-
             <LinearLayout
                 android:background="@color/fifth"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
                 <TextView
                     android:text="Món ngon mỗi ngày"
                     android:gravity="center"
@@ -69,8 +84,8 @@
                     android:textStyle="bold"
                     android:layout_marginStart="@dimen/margin_1"
                     android:layout_marginEnd="@dimen/margin_1"
-                    android:layout_marginTop="@dimen/margin_1"
-                    android:layout_marginBottom="@dimen/margin_1"
+                    android:layout_marginTop="@dimen/margin_1_2"
+                    android:layout_marginBottom="@dimen/margin_1_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <androidx.recyclerview.widget.RecyclerView
@@ -89,11 +104,42 @@
             android:background="@color/fifth"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ListView
-                android:id="@+id/listViewNavHome"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </ListView>
+                <LinearLayout
+                    android:background="@color/primary"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:onClick="ToHome"
+                        android:src="@drawable/logo_app"
+                        android:padding="@dimen/padding_2"
+                        android:layout_width="@dimen/item_logo_nav_size"
+                        android:layout_height="@dimen/item_logo_nav_size"/>
+                    <TextView
+                        android:onClick="ToHome"
+                        android:text="@string/app_name"
+                        android:fontFamily="@font/dancing_script_medium"
+                        android:textColor="@color/fifth"
+                        android:padding="@dimen/margin_1_2"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/text_size_nav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <ListView
+                    android:id="@+id/listViewNavHome"
+                    android:padding="@dimen/padding_1"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="@dimen/margin_1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </ListView>
+            </LinearLayout>
+
         </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
 
