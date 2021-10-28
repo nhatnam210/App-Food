@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/fifth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChiTietMonActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarChitietmon"
+        app:title="@string/food_detail_title"
+        app:navigationIcon="@drawable/ic_back_button"
+        app:titleTextColor="@color/white"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </androidx.appcompat.widget.Toolbar>
+    <FrameLayout
+        android:layout_marginTop="@dimen/margin_1_2"
+        android:layout_marginBottom="@dimen/margin_1_2"
+        android:background="@color/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:onClick="ToHome"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/logo_app"
+                android:layout_marginRight="@dimen/margin_1_2"
+                android:layout_width="@dimen/item_logo_top_size"
+                android:layout_height="@dimen/item_logo_top_size"/>
+            <TextView
+                android:layout_width="@dimen/app_name_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="@dimen/padding_text"
+                android:fontFamily="@font/dancing_script_medium"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_big"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewChitietmon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/margin_1"
+            android:layout_marginTop="@dimen/margin_1_2"
+            android:layout_marginEnd="@dimen/margin_1"
+            android:elevation="@dimen/margin_1"
+            app:cardCornerRadius="@dimen/radius">
+
+            <ImageView
+                android:id="@+id/hinhmon_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_detail_height"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+        </androidx.cardview.widget.CardView>
+        //Linear thon tin
+        <LinearLayout
+            android:id="@+id/linear_thongtin"
+            android:layout_below="@+id/cardViewChitietmon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_1"
+            android:layout_marginTop="@dimen/margin_1_2"
+            android:layout_marginRight="@dimen/margin_1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/padding_1"
+            android:paddingRight="@dimen/padding_1">
+
+            <TextView
+                android:id="@+id/tenmon_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_1_2"
+                android:paddingLeft="@dimen/padding_text"
+                android:paddingTop="@dimen/padding_text"
+                android:singleLine="true"
+                android:text="Ten Mon"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_size_detail"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/gia_chitiet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/background_cost_color"
+                android:padding="@dimen/padding_1"
+                android:text="150,000 đ"
+                android:textColor="@color/fifth"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linear_mua"
+            android:layout_below="@+id/linear_thongtin"
+            android:layout_margin="@dimen/margin_1"
+            android:layout_marginBottom="@dimen/margin_1">
+
+            <TextView
+                android:id="@+id/mota_chitiet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mo ta mon "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" />
+        </ScrollView>
+        //Linear buy
+        <LinearLayout
+            android:id="@+id/linear_mua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/margin_1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Số lượng"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/margin_1_2"
+                android:background="@drawable/custom_spinner"
+                android:padding="@dimen/padding_1">
+                <Spinner
+                    android:id="@+id/spinner_soluong"
+                    android:layout_width="@dimen/spinner_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/fourth"
+                    android:backgroundTint="@color/primary" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_mua"
+                android:layout_width="@dimen/button_buy_width"
+                android:layout_height="@dimen/button_buy_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_1_2"
+                android:background="@drawable/custom_button"
+                android:backgroundTint="@color/second"
+                android:text="Thêm vào giỏ"
+                android:textAllCaps="false"
+                android:textColor="@color/fifth"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

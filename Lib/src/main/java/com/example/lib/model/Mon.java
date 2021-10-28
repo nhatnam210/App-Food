@@ -1,9 +1,10 @@
 package com.example.lib.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Mon {
-    public class Result {
+public class Mon implements Serializable {
+    public class Result implements Serializable {
         private int id;
         private int madanhmuc;
         private String tenmon;

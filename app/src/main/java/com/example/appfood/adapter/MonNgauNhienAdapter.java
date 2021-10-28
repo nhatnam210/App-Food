@@ -2,6 +2,7 @@ package com.example.appfood.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
+import com.example.appfood.activity.ChiTietMonActivity;
+import com.example.lib.InterfaceResponsitory.ItemClickOptions;
 import com.example.lib.model.Mon;
 
 import java.text.DecimalFormat;
@@ -47,6 +50,17 @@ public class MonNgauNhienAdapter extends RecyclerView.Adapter<MonNgauNhienAdapte
                 .placeholder(R.drawable.img_default)
                 .error(R.drawable.img_error)
                 .into(holder.hinhmon);
+        holder.setItemClickOptions(new ItemClickOptions() {
+            @Override
+            public void onClickOptions(View view, int pos, boolean isLongClick) {
+                if(!isLongClick) {
+                    Intent intent = new Intent(context, ChiTietMonActivity.class);
+                    intent.putExtra("chitietmon",monResult);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
@@ -54,15 +68,27 @@ public class MonNgauNhienAdapter extends RecyclerView.Adapter<MonNgauNhienAdapte
         return list.size();
     }
 
-    public class GetViewMonNgauNhien extends  RecyclerView.ViewHolder {
+    public class GetViewMonNgauNhien extends  RecyclerView.ViewHolder implements View.OnClickListener {
         TextView gia,tenmon,mota;
         ImageView hinhmon;
+        private ItemClickOptions itemClickOptions;
         public GetViewMonNgauNhien(@NonNull View itemView) {
             super(itemView);
             gia = itemView.findViewById(R.id.gia);
             tenmon = itemView.findViewById(R.id.tenmon);
             mota = itemView.findViewById(R.id.mota);
             hinhmon = itemView.findViewById(R.id.hinhmon);
+            itemView.setOnClickListener(this);
+        }
+
+        public void setItemClickOptions(ItemClickOptions itemClickOptions) {
+            this.itemClickOptions = itemClickOptions;
+        }
+
+
+        @Override
+        public void onClick(View view) {
+            itemClickOptions.onClickOptions(view, getAbsoluteAdapterPosition(), false);
         }
     }
 }

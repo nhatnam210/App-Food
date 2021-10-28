@@ -9,12 +9,16 @@
     <dimen name="padding_text">3dp</dimen>
     <dimen name="padding_text_left">2dp</dimen>
     <dimen name="app_name_width">90dp</dimen>
-
+    <dimen name="spinner_width">150dp</dimen>
+    <dimen name="button_buy_width">200dp</dimen>
+    <dimen name="button_buy_height">58dp</dimen>
+    <dimen name="scroll_view_height">100dp</dimen>
 
     <dimen name="radius">8dp</dimen>
     <!--    item -->
     <dimen name="item_card_menu_height">140dp</dimen>
     <dimen name="item_card_home_height">120dp</dimen>
+    <dimen name="item_card_detail_height">200dp</dimen>
     <dimen name="item_logo_top_size">30dp</dimen>
     <dimen name="item_logo_nav_size">90dp</dimen>
     <dimen name="item_detail_menu_pic_width">80dp</dimen>
@@ -24,6 +28,7 @@
     <dimen name="text_size_nav">30dp</dimen>
     <dimen name="text_size_big">26dp</dimen>
     <dimen name="text_size_title">16dp</dimen>
+    <dimen name="text_size_detail">20dp</dimen>
     <dimen name="text_size">15dp</dimen>
     <dimen name="text_cost_size">14dp</dimen>
     <dimen name="text_des_size">12dp</dimen>
