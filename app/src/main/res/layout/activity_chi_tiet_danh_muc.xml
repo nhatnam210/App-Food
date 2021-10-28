@@ -8,8 +8,8 @@
     android:layout_height="match_parent"
     tools:context=".activity.ChiTietDanhMucActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title="chi tiet danh muc"
+        android:id="@+id/toolbarChitietdanhmuc"
+        app:title="@string/menu_detail_title"
         app:navigationIcon="@drawable/ic_back_button"
         app:titleTextColor="@color/white"
         android:background="@color/primary"

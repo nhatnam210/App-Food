@@ -20,6 +20,7 @@ public interface AppFoodMethods {
     @FormUrlEncoded
     Observable<Mon> GET_MonTheoDanhMuc(
             @Field("page") int page,
-            @Field("madanhmuc") int madanhmuc
+            @Field("madanhmuc") int madanhmuc,
+            @Field("select") int select
     );
 }

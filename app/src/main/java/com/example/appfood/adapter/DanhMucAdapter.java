@@ -2,6 +2,7 @@ package com.example.appfood.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
+import com.example.appfood.activity.ChiTietDanhMucActivity;
+import com.example.appfood.activity.ChiTietMonActivity;
+import com.example.lib.InterfaceResponsitory.ItemClickOptions;
 import com.example.lib.model.DanhMuc;
 
 import java.util.List;
@@ -44,6 +48,17 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewD
                 .placeholder(R.drawable.img_default)
                 .error(R.drawable.img_error)
                 .into(holder.hinhdanhmuc);
+            holder.setItemClickOptions(new ItemClickOptions() {
+                @Override
+                public void onClickOptions(View view, int pos, boolean isLongClick) {
+                    if(!isLongClick) {
+                        Intent intent = new Intent(context, ChiTietDanhMucActivity.class);
+                        intent.putExtra("madanhmuc",danhmucResult.getId());
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(intent);
+                    }
+                }
+            });
     }
 
     @Override
@@ -52,13 +67,25 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewD
     }
 
     //gán id view
-    public class GetViewDanhMuc extends RecyclerView.ViewHolder {
+    public class GetViewDanhMuc extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView tendanhmuc;
         ImageView hinhdanhmuc;
+        private ItemClickOptions itemClickOptions;
+
         public GetViewDanhMuc(@NonNull View itemView) {
             super(itemView);
             tendanhmuc = itemView.findViewById(R.id.tendanhmuc);
             hinhdanhmuc = itemView.findViewById(R.id.hinhdanhmuc);
+            itemView.setOnClickListener(this);
+        }
+
+        public void setItemClickOptions(ItemClickOptions itemClickOptions) {
+            this.itemClickOptions = itemClickOptions;
+        }
+
+        @Override
+        public void onClick(View view) {
+            itemClickOptions.onClickOptions(view, getAdapterPosition(),false);
         }
     }
 }

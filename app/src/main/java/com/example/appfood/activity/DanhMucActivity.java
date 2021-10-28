@@ -48,7 +48,7 @@ public class DanhMucActivity extends AppCompatActivity {
 //            ShowToast.Notify(this,"Internet thành công!");
             GetDanhMuc();
         }else{
-            Show.Notify(this,"Không có kết nối Internet!");
+            Show.Notify(this,getString(R.string.error_network));
             finish();
         }
     }
@@ -59,16 +59,11 @@ public class DanhMucActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(trangchu);
+//                Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
+//                startActivity(trangchu);
+                finish();
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        GetDanhMuc();
     }
 
     private void khoitao() {
@@ -94,7 +89,7 @@ public class DanhMucActivity extends AppCompatActivity {
                     }
                 },
                 throwable -> {
-                    Show.Notify(this,"Không thể kết nối với Server! ");
+                    Show.Notify(this,getString(R.string.error_server));
                 }
         ));
     }
@@ -107,5 +102,11 @@ public class DanhMucActivity extends AppCompatActivity {
     private void getViewId() {
         toolbar = findViewById(R.id.toolbar);
         recycleViewDanhMuc = findViewById(R.id.recycleViewDanhMuc);
+    }
+
+    @Override
+    protected void onDestroy() {
+        compositeDisposable.clear();
+        super.onDestroy();
     }
 }

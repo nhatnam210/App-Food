@@ -1,5 +1,6 @@
 package com.example.appfood.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     List<Mon.Result> listMonNgauNhienResult;
     MonNgauNhienAdapter monNgauNhienAdapter;
 
+    boolean isLoading = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,15 +72,9 @@ public class MainActivity extends AppCompatActivity {
             GetMonNgauNhien();
             ChuyenTrang();
         }else{
-            Show.Notify(this,"Không có Internet! Vui lòng thử lại!");
+            Show.Notify(this,getString(R.string.error_network));
             finish();
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        GetMonNgauNhien();
     }
 
     private void setNav() {
@@ -109,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         listViewNavHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                drawerLayout.closeDrawer(GravityCompat.START);
                 switch (i) {
                     case 0:
                         Intent danhmuc = new Intent(getApplicationContext(),DanhMucActivity.class);
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 },
                 throwable -> {
-                    Show.Notify(this,"Không thể kết nối với Server! ");
+                    Show.Notify(this,"Không thể kết nối với Server!");
                 }
         ));
     }
@@ -193,4 +191,9 @@ public class MainActivity extends AppCompatActivity {
         //...
     }
 
+    @Override
+    protected void onDestroy() {
+        compositeDisposable.clear();
+        super.onDestroy();
+    }
 }
