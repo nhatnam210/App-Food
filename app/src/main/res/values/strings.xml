@@ -5,12 +5,19 @@
     <string name="menu">Danh mục</string>
     <string name="introduce">Giới thệu chung</string>
     <string name="contact">Liên hệ</string>
+    <string name="cart">Giỏ hàng</string>
     <string name="menu_detail_title">Chi tiết danh mục</string>
     <string name="food_detail_title">Chi tiết món</string>
+
+    /label
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="payment">Thanh toán thôi!</string>
+    <string name="total_price">Tổng cộng:</string>
 
     //thông báo
     <string name="error_network">Không có Internet!</string>
     <string name="error_server">Không thể kết nối với Server!</string>
+    <string name="empty_cart_notify">Giỏ hàng trống!</string>
 
     //hình ảnh
     <string name="slide_1">https://old.tiendauroi.com/uploads/default/original/2X/b/bc7d2c293b170e9810a6cbf9bcaf5ed316ccface.jpeg</string>

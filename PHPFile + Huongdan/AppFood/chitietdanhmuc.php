@@ -1,6 +1,12 @@
 <?php
 	include "connect.php";
-	$query = "SELECT * FROM `danhmuc` ORDER BY RAND()";
+	// $page = $_POST['page'];
+	// $select = $_POST['select'];
+	// $pos = ($page - 1) * $select;
+	$madanhmuc = $_POST['madanhmuc'];
+
+	// $query = "SELECT * FROM `mon` WHERE `madanhmuc` = $madanhmuc LIMIT $pos,$select";
+	$query = "SELECT * FROM `mon` WHERE `madanhmuc` = $madanhmuc  ORDER BY `gia` ASC ";
 	$data = mysqli_query($conn, $query);
 	$result = array();
 

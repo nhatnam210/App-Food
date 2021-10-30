@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.appfood.R;
 import com.example.appfood.adapter.DanhMucAdapter;
@@ -26,14 +27,16 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DanhMucActivity extends AppCompatActivity {
-    Toolbar toolbar;
-    RecyclerView recycleViewDanhMuc;
+    Toolbar toolbar_Danhmuc;
+    RecyclerView recycleView_DanhMuc;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     AppFoodMethods appFoodMethods;
 
     List<DanhMuc.Result> listDanhMucResult;
     DanhMucAdapter danhMucAdapter;
+
+    TextView thongbao_soluong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class DanhMucActivity extends AppCompatActivity {
         if(NetworkConnection.isConnected(this)) {
 //            ShowToast.Notify(this,"Internet thành công!");
             GetDanhMuc();
+            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
         }else{
             Show.Notify(this,getString(R.string.error_network));
             finish();
@@ -54,9 +58,9 @@ public class DanhMucActivity extends AppCompatActivity {
     }
 
     private void actionToolbar() {
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar_Danhmuc);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar_Danhmuc.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
@@ -72,8 +76,8 @@ public class DanhMucActivity extends AppCompatActivity {
 
         //set layout 2 cột
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
-        recycleViewDanhMuc.setLayoutManager(layoutManager);
-        recycleViewDanhMuc.setHasFixedSize(true);
+        recycleView_DanhMuc.setLayoutManager(layoutManager);
+        recycleView_DanhMuc.setHasFixedSize(true);
     }
 
     private void GetDanhMuc() {
@@ -85,7 +89,7 @@ public class DanhMucActivity extends AppCompatActivity {
                     if(danhMuc.isSuccess()) {
                         listDanhMucResult = danhMuc.getResult();
                         danhMucAdapter = new DanhMucAdapter(this,listDanhMucResult);
-                        recycleViewDanhMuc.setAdapter(danhMucAdapter);
+                        recycleView_DanhMuc.setAdapter(danhMucAdapter);
                     }
                 },
                 throwable -> {
@@ -99,9 +103,21 @@ public class DanhMucActivity extends AppCompatActivity {
         startActivity(trangchu);
     }
 
+    public void openCart(View view) {
+        Intent giohang = new Intent(getApplicationContext(),GioHangActivity.class);
+        startActivity(giohang);
+    }
+
     private void getViewId() {
-        toolbar = findViewById(R.id.toolbar);
-        recycleViewDanhMuc = findViewById(R.id.recycleViewDanhMuc);
+        toolbar_Danhmuc = findViewById(R.id.toolbar_Danhmuc);
+        recycleView_DanhMuc = findViewById(R.id.recycleView_DanhMuc);
+        thongbao_soluong = findViewById(R.id.thongbao_soluong);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
     }
 
     @Override

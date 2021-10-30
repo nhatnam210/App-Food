@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.bumptech.glide.Glide;
@@ -40,13 +41,14 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar toolbarHome;
+    Toolbar toolbar_Home;
     ViewFlipper viewFlipper;
-    RecyclerView recycleViewMonNgauNhien;
+    RecyclerView recycleView_MonNgauNhien;
     NavigationView navigationView;
-    ListView listViewNavHome;
+    ListView listView_NavHome;
     DrawerLayout drawerLayout;
     NavAdapter navAdapter;
+    TextView thongbao_soluong;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     AppFoodMethods appFoodMethods;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if(NetworkConnection.isConnected(this)) {
             Slider();
             GetMonNgauNhien();
+            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
             ChuyenTrang();
         }else{
             Show.Notify(this,getString(R.string.error_network));
@@ -80,30 +83,15 @@ public class MainActivity extends AppCompatActivity {
     private void setNav() {
         //list tùy chọn nav
         navAdapter = new NavAdapter(MainActivity.this,R.layout.item_list_nav);
-        listViewNavHome.setAdapter(navAdapter);
+        listView_NavHome.setAdapter(navAdapter);
 
         navAdapter.add(new NavForm(R.drawable.ic_menu_res,getString(R.string.menu)));
         navAdapter.add(new NavForm(R.drawable.ic_info,getString(R.string.introduce)));
         navAdapter.add(new NavForm(R.drawable.ic_contact,getString(R.string.contact)));
     }
 
-    private void khoitao() {
-        listMonNgauNhienResult = new ArrayList<>();
-        appFoodMethods = RetrofitClient.getRetrofit(Url.AppFood_Url).create(AppFoodMethods.class);
-
-        //set layout 2 cột
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
-        recycleViewMonNgauNhien.setLayoutManager(layoutManager);
-        recycleViewMonNgauNhien.setHasFixedSize(true);
-    }
-
-    public void ToHome(View view) {
-        Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(trangchu);
-    }
-
     private void ChuyenTrang() {
-        listViewNavHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView_NavHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -134,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     if(mon.isSuccess()) {
                         listMonNgauNhienResult = mon.getResult();
                         monNgauNhienAdapter = new MonNgauNhienAdapter(this,listMonNgauNhienResult);
-                        recycleViewMonNgauNhien.setAdapter(monNgauNhienAdapter);
+                        recycleView_MonNgauNhien.setAdapter(monNgauNhienAdapter);
                     }
                 },
                 throwable -> {
@@ -167,10 +155,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void actionToolbar() {
-        setSupportActionBar(toolbarHome);
+        setSupportActionBar(toolbar_Home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        toolbarHome.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar_Home.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
@@ -179,16 +167,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getViewId() {
-        toolbarHome = findViewById(R.id.toolbarHome);
+        toolbar_Home = findViewById(R.id.toolbar_Home);
         viewFlipper = findViewById(R.id.viewFlipper);
-        recycleViewMonNgauNhien = findViewById(R.id.recycleViewMonNgauNhien);
+        recycleView_MonNgauNhien = findViewById(R.id.recycleView_MonNgauNhien);
         navigationView = findViewById(R.id.navigationView);
-        listViewNavHome = findViewById(R.id.listViewNavHome);
+        listView_NavHome = findViewById(R.id.listView_NavHome);
         drawerLayout = findViewById(R.id.drawerLayout);
-        //custom view danh muc
-//        danhMucs = new ArrayList<>();
-//        danhMucAdapter = new DanhMucAdapter(danhMucs,getApplicationContext());
-        //...
+        thongbao_soluong = findViewById(R.id.thongbao_soluong);
+
+    }
+
+    private void khoitao() {
+        listMonNgauNhienResult = new ArrayList<>();
+        appFoodMethods = RetrofitClient.getRetrofit(Url.AppFood_Url).create(AppFoodMethods.class);
+
+        //set layout 2 cột
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this,2);
+        recycleView_MonNgauNhien.setLayoutManager(layoutManager);
+        recycleView_MonNgauNhien.setHasFixedSize(true);
+
+        //giỏ hàng
+        if(Show.listGiohang == null) {
+            Show.listGiohang = new ArrayList<>();
+        }
+    }
+
+    public void openCart(View view) {
+        Intent giohang = new Intent(getApplicationContext(),GioHangActivity.class);
+        startActivity(giohang);
+    }
+
+    public void ToHome(View view) {
+        Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(trangchu);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
     }
 
     @Override
