@@ -53,7 +53,7 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewD
                 public void onClickOptions(View view, int pos, boolean isLongClick) {
                     if(!isLongClick) {
                         Intent intent = new Intent(context, ChiTietDanhMucActivity.class);
-                        intent.putExtra("madanhmuc",danhmucResult.getId());
+                        intent.putExtra("chitietdanhmuc",danhmucResult);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
                     }

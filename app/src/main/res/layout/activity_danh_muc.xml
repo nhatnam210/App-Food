@@ -17,13 +17,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbar_Danhmuc"
                 app:title="@string/menu"
                 app:navigationIcon="@drawable/ic_back_button"
                 app:titleTextColor="@color/white"
                 android:background="@color/primary"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
+                <FrameLayout
+                    android:layout_gravity="end"
+                    android:layout_marginRight="@dimen/margin_1"
+                    android:layout_width="@dimen/wrap_cart_width"
+                    android:layout_height="?attr/actionBarSize">
+                    <FrameLayout
+                        android:onClick="openCart"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/miniCart"
+                            android:src="@drawable/ic_cart"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <androidx.cardview.widget.CardView
+                            android:elevation="@dimen/margin_1"
+                            app:cardCornerRadius="100dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@color/cost_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/thongbao_soluong"
+                                android:text="0"
+                                android:textAlignment="center"
+                                android:paddingLeft="@dimen/padding_1"
+                                android:paddingRight="@dimen/padding_1"
+                                android:background="@color/cost_color"
+                                android:textColor="@color/white"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                        </androidx.cardview.widget.CardView>
+                    </FrameLayout>
+                </FrameLayout>
             </androidx.appcompat.widget.Toolbar>
             <FrameLayout
                 android:layout_marginTop="@dimen/margin_1_2"
@@ -55,7 +92,7 @@
                 </LinearLayout>
             </FrameLayout>
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycleViewDanhMuc"
+                android:id="@+id/recycleView_DanhMuc"
                 android:layout_marginBottom="@dimen/margin_1_2"
                 android:layout_marginLeft="@dimen/margin_1_2"
                 android:layout_marginRight="@dimen/margin_1_2"

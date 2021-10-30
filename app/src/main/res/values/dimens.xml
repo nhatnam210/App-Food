@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--    distance -->
+    <!--margin-->
     <dimen name="margin_1_2">5dp</dimen>
     <dimen name="margin_1">10dp</dimen>
     <dimen name="margin_2">15dp</dimen>
+    <dimen name="margin_total_price">20dp</dimen>
+
+    <!--padding-->
     <dimen name="padding_1">5dp</dimen>
     <dimen name="padding_2">10dp</dimen>
+    <dimen name="padding_btn">35dp</dimen>
     <dimen name="padding_text">3dp</dimen>
     <dimen name="padding_text_left">2dp</dimen>
+
+    <!--size-->
     <dimen name="app_name_width">90dp</dimen>
     <dimen name="spinner_width">150dp</dimen>
     <dimen name="button_buy_width">200dp</dimen>
-    <dimen name="button_buy_height">58dp</dimen>
+    <dimen name="button_buy_height">55dp</dimen>
     <dimen name="scroll_view_height">100dp</dimen>
+    <dimen name="wrap_cart_width">70dp</dimen>
 
     <dimen name="radius">8dp</dimen>
     <!--    item -->
     <dimen name="item_card_menu_height">140dp</dimen>
     <dimen name="item_card_home_height">120dp</dimen>
-    <dimen name="item_card_detail_height">200dp</dimen>
+    <dimen name="item_card_detail_height">220dp</dimen>
     <dimen name="item_logo_top_size">30dp</dimen>
     <dimen name="item_logo_nav_size">90dp</dimen>
-    <dimen name="item_detail_menu_pic_width">80dp</dimen>
-    <dimen name="item_detail_menu_pic_height">60dp</dimen>
+    <dimen name="item_card_detail_menu_pic_width">80dp</dimen>
+    <dimen name="item_card_detail_menu_pic_height">65dp</dimen>
+    <dimen name="item_card_cart_pic_width">80dp</dimen>
+    <dimen name="item_card_cart_pic_height">65dp</dimen>
+    <dimen name="btn_add_sub_size">35dp</dimen>
+
+<!--    icon-->
+    <dimen name="icon_toolbar_size">26dp</dimen>
+    <dimen name="icon_nav_size">30dp</dimen>
+    <dimen name="icon_add_sub">20dp</dimen>
+
+
 
     <!--    text -->
     <dimen name="text_size_nav">30dp</dimen>
     <dimen name="text_size_big">26dp</dimen>
+    <dimen name="text_size_meidum">20dp</dimen>
+    <dimen name="text_size_total">23dp</dimen>
     <dimen name="text_size_title">16dp</dimen>
     <dimen name="text_size_detail">20dp</dimen>
     <dimen name="text_size">15dp</dimen>
@@ -41,4 +61,5 @@
     <dimen name="background_text_height">30dp</dimen>
     <dimen name="background_des_height">30dp</dimen>
     <dimen name="background_des_detail_height">26dp</dimen>
+    <dimen name="background_quantity_cart_width">55dp</dimen>
 </resources>

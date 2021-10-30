@@ -8,27 +8,35 @@
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/custom_spinner.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/gradient_bg.xml" value="0.28055555555555556" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic__menu_full.xml" value="0.27685185185185185" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_add.xml" value="0.2911458333333333" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_back_button.xml" value="0.2866666666666667" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_cart.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_contact.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_default_img.xml" value="0.28055555555555556" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_info.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.27870370370370373" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_menu_full.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_menu_res.xml" value="0.2911458333333333" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/ic_sub.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/radius_custom.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/spinner_item.xml" value="0.1765625" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/font/dancing_script_bold.xml" value="0.17395833333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_chi_tiet_danh_muc.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_chi_tiet_mon.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_danh_muc.xml" value="0.264" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_gio_hang.xml" value="0.4" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_gioi_thieu_chung.xml" value="0.19791666666666666" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_lien_he.xml" value="0.19791666666666666" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_thong_tin_nha_hang.xml" value="0.1983695652173913" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_chi_tiet_danh_muc.xml" value="0.4" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_danhmuc.xml" value="0.264" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_giohang.xml" value="0.4" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_grid_danh_muc.xml" value="0.2" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_grid_mon_ngau_nhien.xml" value="0.4" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_list_nav.xml" value="0.4" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/item_loading.xml" value="0.2" />
-        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/spinner_item.xml" value="0.2" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/spinner_item.xml" value="0.4" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.27685185185185185" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.27685185185185185" />
       </map>

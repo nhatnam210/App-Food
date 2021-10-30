@@ -1,12 +1,6 @@
 <?php
 	include "connect.php";
-	$page = $_POST['page'];
-	$select = $_POST['select'];
-	$pos = ($page - 1) * $select;
-	$madanhmuc = $_POST['madanhmuc'];
-
-	// $query = "SELECT * FROM `mon` WHERE `madanhmuc` = $madanhmuc LIMIT $pos,$select";
-	$query = "SELECT * FROM `mon` WHERE `madanhmuc` = $madanhmuc  ORDER BY `gia` ASC ";
+	$query = "SELECT * FROM `danhmuc`";
 	$data = mysqli_query($conn, $query);
 	$result = array();
 
