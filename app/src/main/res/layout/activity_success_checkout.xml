@@ -71,7 +71,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_big"
-                    android:text="@string/order_send_success"
+                    android:text="@string/order_send_success_show"
                     android:layout_marginBottom="@dimen/margin_1_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>

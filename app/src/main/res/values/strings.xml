@@ -53,6 +53,7 @@
     <string name="char_style">ký tự</string>
 
     <string name="order_send_success">Thành công!</string>
+    <string name="order_send_success_show">Thành công</string>
     <string name="order_send_error">Lỗi khi gửi đơn hàng!</string>
     <string name="empty_cart">Vui lòng chọn món trước khi thanh toán!</string>
     <string name="ask_to_delete">Bạn muốn xóa món này?</string>
