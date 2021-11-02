@@ -13,7 +13,7 @@ import com.example.lib.common.Show;
 import java.text.DecimalFormat;
 
 public class SuccessCheckoutActivity extends AppCompatActivity {
-    TextView txt_tenkhachhang,txt_email,txt_phone,txt_ghichu,txt_tongtien;
+    TextView txt_tenkhachhang,txt_email,txt_sodienthoai,txt_ghichu,txt_tongtien;
     DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class SuccessCheckoutActivity extends AppCompatActivity {
     private void getThongTinKhachHang() {
         txt_tenkhachhang.setText(ThongTinKhachHangActivity.user_name.getText().toString());
         txt_email.setText(ThongTinKhachHangActivity.user_email.getText().toString());
-        txt_phone.setText(ThongTinKhachHangActivity.user_phone.getText().toString());
+        txt_sodienthoai.setText(ThongTinKhachHangActivity.user_phone.getText().toString());
         txt_ghichu.setText(ThongTinKhachHangActivity.user_note.getText().toString());
         long thanhtien = Show.tinhTongTien();
         txt_tongtien.setText(decimalFormat.format(thanhtien)+" đ");
@@ -36,7 +36,7 @@ public class SuccessCheckoutActivity extends AppCompatActivity {
     private void getViewId() {
         txt_tenkhachhang = findViewById(R.id.txt_tenkhachhang);
         txt_email = findViewById(R.id.txt_email);
-        txt_phone = findViewById(R.id.txt_ghichu);
+        txt_sodienthoai = findViewById(R.id.txt_sodienthoai);
         txt_ghichu = findViewById(R.id.txt_ghichu);
         txt_tongtien = findViewById(R.id.txt_tongtien);
     }
