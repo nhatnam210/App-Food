@@ -44,7 +44,7 @@ public class ChiTietMonActivity extends AppCompatActivity {
         //check network
         if(NetworkConnection.isConnected(this)) {
             getChiTietMon();
-            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+            Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
             actionBuy();
         }else{
             Show.Notify(this,getString(R.string.error_network));
@@ -72,7 +72,6 @@ public class ChiTietMonActivity extends AppCompatActivity {
                     int checkSoluong = soluong + Show.listGiohang.get(i).getSoluong();
                     Show.listGiohang.get(i).setSoluong(checkSoluong > 200 ? 200 : checkSoluong);
 //                    long thanhtien = Long.parseLong(monResult.getGia()) * Show.listGiohang.get(i).getSoluong();
-
                 }
             }
             if(!isExist) {
@@ -82,6 +81,7 @@ public class ChiTietMonActivity extends AppCompatActivity {
                 giohang.setMamon(monResult.getId());
                 giohang.setTenmon(monResult.getTenmon());
                 giohang.setHinhmon(monResult.getHinhmon());
+                giohang.setMota(monResult.getMota());
                 giohang.setSoluong(soluong);
                 //Thêm vào giỏ
                 Show.listGiohang.add(giohang);
@@ -94,11 +94,13 @@ public class ChiTietMonActivity extends AppCompatActivity {
             giohang.setMamon(monResult.getId());
             giohang.setTenmon(monResult.getTenmon());
             giohang.setHinhmon(monResult.getHinhmon());
+            giohang.setMota(monResult.getMota());
             giohang.setSoluong(soluong);
             //Thêm vào giỏ
             Show.listGiohang.add(giohang);
         }
-        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+        // thongbao_soluong.setText(String.valueOf(Show.listGiohang.size())); // đếm theo loại
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
     }
 
     private void getChiTietMon() {
@@ -148,5 +150,17 @@ public class ChiTietMonActivity extends AppCompatActivity {
     public void ToHome(View view) {
         Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(trangchu);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
     }
 }

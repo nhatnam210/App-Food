@@ -62,7 +62,7 @@ public class ChiTietDanhMucActivity extends AppCompatActivity {
         if(NetworkConnection.isConnected(this)) {
                 getChiTietDanhMuc();
 //                actionLoading();
-            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+            Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
         }else{
             Show.Notify(this,getString(R.string.error_network));
             finish();
@@ -124,7 +124,7 @@ public class ChiTietDanhMucActivity extends AppCompatActivity {
     private void getChiTietDanhMuc() {
         DanhMuc.Result danhmucResult = (DanhMuc.Result) getIntent().getSerializableExtra("chitietdanhmuc");
         madanhmuc = danhmucResult.getId();
-        compositeDisposable.add(appFoodMethods.GET_MonTheoDanhMuc(madanhmuc)
+        compositeDisposable.add(appFoodMethods.POST_MonTheoDanhMuc(madanhmuc)
           .subscribeOn(Schedulers.io())
           .observeOn(AndroidSchedulers.mainThread())
           .subscribe(
@@ -172,7 +172,13 @@ public class ChiTietDanhMucActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
     }
 
     @Override

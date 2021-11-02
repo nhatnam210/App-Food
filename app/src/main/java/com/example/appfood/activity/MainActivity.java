@@ -1,13 +1,5 @@
 package com.example.appfood.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,15 +11,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.example.appfood.R;
 import com.example.appfood.adapter.MonNgauNhienAdapter;
 import com.example.appfood.adapter.NavAdapter;
+import com.example.lib.InterfaceResponsitory.AppFoodMethods;
 import com.example.lib.NavForm;
+import com.example.lib.RetrofitClient;
 import com.example.lib.common.NetworkConnection;
 import com.example.lib.common.Show;
-import com.example.lib.InterfaceResponsitory.AppFoodMethods;
-import com.example.lib.RetrofitClient;
 import com.example.lib.common.Url;
 import com.example.lib.model.Mon;
 import com.google.android.material.navigation.NavigationView;
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if(NetworkConnection.isConnected(this)) {
             Slider();
             GetMonNgauNhien();
-            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+            Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
             ChuyenTrang();
         }else{
             Show.Notify(this,getString(R.string.error_network));
@@ -101,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(danhmuc);
                         break;
                     case 1:
-                        Intent thongtin = new Intent(getApplicationContext(), GioiThieuChungActivity.class);
-                        startActivity(thongtin);
+                        Intent gioithieuchung = new Intent(getApplicationContext(), GioiThieuChungActivity.class);
+                        startActivity(gioithieuchung);
                         break;
                     case 2:
                         Intent lienhe = new Intent(getApplicationContext(),LienHeActivity.class);
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             viewFlipper.addView(imageView);
         }
-        viewFlipper.setFlipInterval(10000);
+        viewFlipper.setFlipInterval(5000);
         viewFlipper.setAutoStart(true);
         Animation animation_slide_step_1 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slider_step_1);
         Animation animation_slide_step_2 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slider_step_2);
@@ -205,8 +204,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
+    }
+
 
     @Override
     protected void onDestroy() {

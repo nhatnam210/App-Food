@@ -18,9 +18,10 @@ public interface AppFoodMethods {
 
     @POST("chitietdanhmuc.php")
     @FormUrlEncoded
-    Observable<Mon> GET_MonTheoDanhMuc(
+    Observable<Mon> POST_MonTheoDanhMuc(
 //            @Field("page") int page,
 //            @Field("select") int select,
             @Field("madanhmuc") int madanhmuc
     );
+
 }

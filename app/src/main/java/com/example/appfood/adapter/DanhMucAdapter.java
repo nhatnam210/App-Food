@@ -50,13 +50,11 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewD
                 .into(holder.hinhdanhmuc);
             holder.setItemClickOptions(new ItemClickOptions() {
                 @Override
-                public void onClickOptions(View view, int pos, boolean isLongClick) {
-                    if(!isLongClick) {
+                public void onClickOptions(View view, int pos, int value) {
                         Intent intent = new Intent(context, ChiTietDanhMucActivity.class);
                         intent.putExtra("chitietdanhmuc",danhmucResult);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         context.startActivity(intent);
-                    }
                 }
             });
     }
@@ -85,7 +83,7 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.GetViewD
 
         @Override
         public void onClick(View view) {
-            itemClickOptions.onClickOptions(view, getAdapterPosition(),false);
+            itemClickOptions.onClickOptions(view, getAdapterPosition(),0);
         }
     }
 }
