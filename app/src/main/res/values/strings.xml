@@ -53,6 +53,7 @@
     <string name="char_style">ký tự</string>
 
     <string name="order_send_success">Thành công!</string>
+    <string name="order_send_success_show">Thành công</string>
     <string name="order_send_error">Lỗi khi gửi đơn hàng!</string>
     <string name="empty_cart">Vui lòng chọn món trước khi thanh toán!</string>
     <string name="ask_to_delete">Bạn muốn xóa món này?</string>
@@ -60,8 +61,7 @@
     <string name="mess_send_error">Gửi không thành công!</string>
     <string name="order_success">Đơn hàng của bạn đã được gửi đi!</string>
 
-
-    //hình ảnh
+    //link hình ảnh
     <string name="slide_1">https://old.tiendauroi.com/uploads/default/original/2X/b/bc7d2c293b170e9810a6cbf9bcaf5ed316ccface.jpeg</string>
     <string name="slide_2">https://vnn-imgs-f.vgcloud.vn/2021/03/26/14/loat-deal-khung-trong-dai-tiec-thuong-hieu-nowfood-4-4-1.jpg</string>
     <string name="slide_3">https://image.phunuonline.com.vn/fckeditor/upload/2021/20210326/images/co-hoi-san-deal-4k-trong-nowfood-_631616742485.jpg</string>
