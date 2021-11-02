@@ -50,7 +50,7 @@ public class DanhMucActivity extends AppCompatActivity {
         if(NetworkConnection.isConnected(this)) {
 //            ShowToast.Notify(this,"Internet thành công!");
             GetDanhMuc();
-            thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+            Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
         }else{
             Show.Notify(this,getString(R.string.error_network));
             finish();
@@ -117,8 +117,15 @@ public class DanhMucActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        thongbao_soluong.setText(String.valueOf(Show.demSoLuongGioHang(1)));
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Show.thayDoiSoLuongGioHangNho(thongbao_soluong);
+    }
+
 
     @Override
     protected void onDestroy() {

@@ -6,23 +6,66 @@
     <string name="introduce">Giới thệu chung</string>
     <string name="contact">Liên hệ</string>
     <string name="cart">Giỏ hàng</string>
+    <string name="checkout">Thanh toán</string>
+    <string name="notify">Thông báo</string>
+    <string name="introduce_info_top">Thông tin về nhà hàng</string>
+    <string name="res_name">Nhà hàng Food Food</string>
+    <string name="res_address">180 Hai Bà Trưng, Phường Đa Kao, Quận 1, TP.HCM</string>
+    <string name="res_phone">0337 662 557</string>
+    <string name="res_note">Góp ý, đóng góp và đánh giá</string>
+    <string name="res_note_valid">Bạn chưa nhập lời nhắn!</string>
+
+    <string name="continue_buy">Tiếp tục chọn món</string>
+    <string name="buy">Chọn món</string>
     <string name="menu_detail_title">Chi tiết danh mục</string>
     <string name="food_detail_title">Chi tiết món</string>
 
-    /label
-    <string name="add_to_cart">Thêm vào giỏ</string>
-    <string name="payment">Thanh toán thôi!</string>
-    <string name="total_price">Tổng cộng:</string>
+    <string name="checkout_info">Thông tin thanh toán</string>
+    <string name="user_name">Tên khách hàng</string>
+    <string name="user_email">Email</string>
+    <string name="user_phone">Số điện thoại</string>
+    <string name="user_note">Ghi chú</string>
+    <string name="type_user_name">Nhập tên khách hàng</string>
+    <string name="type_user_email">vd: appfood@gmail.com</string>
+    <string name="type_user_phone">Nhập số điện thoại</string>
+    <string name="type_user_note">Nhập lời nhắn...</string>
 
-    //thông báo
+    /label button
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="payment">Thanh toán</string>
+    <string name="payment_last">Thanh toán thôi!</string>
+    <string name="to_Home">Về trang chủ</string>
+    <string name="sent_mess">Gửi</string>
+    <string name="total_price">Tổng cộng:</string>
+    <string name="yes">Đồng ý</string>
+    <string name="no">Không</string>
+
+    //thông báo!!!
     <string name="error_network">Không có Internet!</string>
     <string name="error_server">Không thể kết nối với Server!</string>
     <string name="empty_cart_notify">Giỏ hàng trống!</string>
+    <string name="validation">Vui lòng nhập đầy đủ thông tin!</string>
+    <string name="none_name">Vui lòng nhập tên khách hàng!</string>
+    <string name="none_email">Vui lòng nhập email!</string>
+    <string name="none_phone">Vui lòng nhập số điện thoại!</string>
+    <string name="invalid_email">Email chưa đúng định dạng!</string>
+    <string name="overload_phone">Số điện thoại không được vượt quá</string>
+    <string name="char_style">ký tự</string>
+
+    <string name="order_send_success">Thành công!</string>
+    <string name="order_send_error">Lỗi khi gửi đơn hàng!</string>
+    <string name="empty_cart">Vui lòng chọn món trước khi thanh toán!</string>
+    <string name="ask_to_delete">Bạn muốn xóa món này?</string>
+    <string name="mess_send_success">Đã gửi thành công!</string>
+    <string name="mess_send_error">Gửi không thành công!</string>
+    <string name="order_success">Đơn hàng của bạn đã được gửi đi!</string>
+
 
     //hình ảnh
     <string name="slide_1">https://old.tiendauroi.com/uploads/default/original/2X/b/bc7d2c293b170e9810a6cbf9bcaf5ed316ccface.jpeg</string>
     <string name="slide_2">https://vnn-imgs-f.vgcloud.vn/2021/03/26/14/loat-deal-khung-trong-dai-tiec-thuong-hieu-nowfood-4-4-1.jpg</string>
     <string name="slide_3">https://image.phunuonline.com.vn/fckeditor/upload/2021/20210326/images/co-hoi-san-deal-4k-trong-nowfood-_631616742485.jpg</string>
     <string name="slide_4">https://image.phunuonline.com.vn/fckeditor/upload/2021/20210326/images/co-hoi-san-deal-4k-trong-nowfood-_31616732759.jpg</string>
+    <string name="title_activity_gioi_thieu_chung">GioiThieuChungActivity</string>
 
 </resources>

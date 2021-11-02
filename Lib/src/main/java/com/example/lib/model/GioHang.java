@@ -1,19 +1,23 @@
 package com.example.lib.model;
 
-public class GioHang {
+import java.io.Serializable;
+
+public class GioHang implements Serializable {
     int mamon;
     String tenmon;
     String hinhmon;
+    String mota;
     long gia;
     int soluong;
 
     public GioHang() {
     }
 
-    public GioHang(int mamon, String tenmon, String hinhmon, long gia, int soluong) {
+    public GioHang(int mamon, String tenmon, String hinhmon, String mota, long gia, int soluong) {
         this.mamon = mamon;
         this.tenmon = tenmon;
         this.hinhmon = hinhmon;
+        this.mota = mota;
         this.gia = gia;
         this.soluong = soluong;
     }
@@ -40,6 +44,14 @@ public class GioHang {
 
     public void setHinhmon(String hinhmon) {
         this.hinhmon = hinhmon;
+    }
+
+    public String getMota() {
+        return mota;
+    }
+
+    public void setMota(String mota) {
+        this.mota = mota;
     }
 
     public long getGia() {

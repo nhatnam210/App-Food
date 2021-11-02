@@ -55,13 +55,11 @@ public class ChiTietDanhMucAdapter extends RecyclerView.Adapter<ChiTietDanhMucAd
                 .into(holder.hinhmon_danhmuc);
         holder.setItemClickOptions(new ItemClickOptions() {
             @Override
-            public void onClickOptions(View view, int pos, boolean isLongClick) {
-                if(!isLongClick) {
+            public void onClickOptions(View view, int pos, int value) {
                     Intent intent = new Intent(context,ChiTietMonActivity.class);
                     intent.putExtra("chitietmon",monResult);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
-                }
             }
         });
     }
@@ -100,7 +98,7 @@ public class ChiTietDanhMucAdapter extends RecyclerView.Adapter<ChiTietDanhMucAd
 
         @Override
         public void onClick(View view) {
-            itemClickOptions.onClickOptions(view, getAbsoluteAdapterPosition(), false);
+            itemClickOptions.onClickOptions(view, getAbsoluteAdapterPosition(),0);
         }
     }
 }
