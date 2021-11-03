@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/.IT/DO AN/Do An Android/Do An Android/app/src/main/res/layout/activity_danh_muc.xml" value="0.18342391304347827" />
+        <entry key="..\:/.IT/DO AN/Do An Android/Do An Android/app/src/main/res/layout/activity_gioi_thieu_chung.xml" value="0.18342391304347827" />
+        <entry key="..\:/.IT/DO AN/Do An Android/Do An Android/app/src/main/res/layout/activity_lien_he.xml" value="0.264" />
+        <entry key="..\:/.IT/DO AN/Do An Android/Do An Android/app/src/main/res/layout/activity_main.xml" value="0.18342391304347827" />
+        <entry key="..\:/.IT/DO AN/Do An Android/Do An Android/app/src/main/res/layout/activity_success_checkout.xml" value="0.18342391304347827" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.27870370370370373" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/custom_border_top.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/custom_border_top_thanhtoan.xml" value="0.2866666666666667" />
@@ -34,9 +39,9 @@
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/radius_custom.xml" value="0.2911458333333333" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/drawable/spinner_item.xml" value="0.1765625" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/font/dancing_script_bold.xml" value="0.17395833333333333" />
-        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_chi_tiet_danh_muc.xml" value="0.437403400309119" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_chi_tiet_danh_muc.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_chi_tiet_mon.xml" value="0.2" />
-        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_danh_muc.xml" value="0.4" />
+        <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_danh_muc.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_gio_hang.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_gioi_thieu_chung.xml" value="0.264" />
         <entry key="..\:/.IT/DO AN/Do An Android/app/src/main/res/layout/activity_lien_he.xml" value="0.264" />
