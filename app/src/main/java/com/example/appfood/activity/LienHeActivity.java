@@ -107,6 +107,7 @@ public class LienHeActivity extends AppCompatActivity {
         Intent intent = new Intent("ACTION_MSG_SENT");
         PendingIntent pendingIntent
                 = PendingIntent.getBroadcast(LienHeActivity.this,0, intent,0);
+
         String phone = text_phone.getText().toString().replaceAll(" ", "");
         String mess = text_mess.getText().toString();
         if(mess.trim().length() > 0) {

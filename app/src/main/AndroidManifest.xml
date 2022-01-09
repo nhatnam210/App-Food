@@ -22,6 +22,7 @@
         android:theme="@style/Theme.AppFood"
         android:usesCleartextTraffic="true">
         <activity
+            android:screenOrientation="portrait"
             android:name=".activity.SuccessCheckoutActivity"
             android:exported="true" />
         <activity
